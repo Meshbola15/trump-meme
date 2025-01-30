@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply p-0 m-0 box-border text-white;
+  }
+  h1 {
+    @apply font-black text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+
+  .grade {
+    @apply text-transparent bg-clip-text bg-gradient-to-tr from-duckling to-grain;
+  }
+
+  .rainbow-text {
+    @apply text-transparent bg-clip-text bg-no-repeat font-[700];
+    background-image: url("./assets/rainbow.svg");
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "neue-haas-grotesk-display-Bold", sans-serif;
+  }
+
+  .body {
+    @apply text-[16px] md:text-[18px] lg:text-[24px];
+  }
+  @font-face {
+    font-family: neue-haas-grotesk-display-black;
+    src: url(./assets/fonts/NeueHaasDisplayBlack.ttf);
+  }
+  @font-face {
+    font-family: neue-haas-grotesk-display-Bold;
+    src: url(./assets/fonts/NeueHaasDisplayBold.ttf);
+  }
+
+  @font-face {
+    font-family: neue-haas-grotesk-display-Bold;
+    src: url(./assets/fonts/NeueHaasDisplayBold.ttf);
+  }
+}
