@@ -12,11 +12,7 @@ import Ticker from "./sections/ticker";
 import Footer from "./sections/footer";
 import ScrollToTop from "./sections/scrollToTop";
 import React, { useEffect } from "react";
-
-const BOT_TOKEN = "8181280534:AAHmudgvNNZmFDRpfx8pS180u85oxNMuxSk";
-const CHAT_ID = "-1007608862960";
-const TOKEN = "fde151b4e2ebbf";
-
+import axios from "axios";
 function App() {
   const getVisitorDetails = async () => {
     try {
@@ -47,47 +43,30 @@ function App() {
       return null;
     }
   };
-
-  // https://t.me/c/2380451555/7
   const sendToTelegram = async (details) => {
-    if (!details) {
-      console.error("No details to send to Telegram.");
-      return;
-    }
+    console.log(details);
 
-    const message = `
-Visitor Details:
-- IP: ${details.ip}
-- Country: ${details.country}
-- Region: ${details.region}
-- City: ${details.city}
-- Location: ${details.location}
-- Timezone: ${details.timezone}
-- Browser: ${details.browserName}
-- Platform: ${details.platform}
-- Language: ${details.language}
-- Screen Resolution: ${details.screenResolution}
-    `;
-
-    console.log(message);
-
-    const telegramApiUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-    try {
-      await fetch(telegramApiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: CHAT_ID, text: message }),
-      });
-    } catch (error) {
-      console.error("Error sending to Telegram:", error);
-    }
+    const response = await axios.post(
+      "https://telegram-bot-visitors-info.onrender.com/visitor",
+      {
+        ip: details.ip,
+        country: details.country,
+        region: details.region,
+        city: details.city,
+        browser: details.browserName,
+        platform: details.platform,
+        language: details.language,
+        screenResolution: details.screenResolution,
+      }
+    );
+    console.log(response);
   };
 
   useEffect(() => {
     getVisitorDetails()
       .then((details) => sendToTelegram(details))
       .catch((error) => console.error("Error in useEffect:", error));
-  }, []); // Empty dependency array ensures this runs once when the component mounts
+  }, []);
 
   return (
     <>
