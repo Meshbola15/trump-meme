@@ -14,6 +14,7 @@ import ScrollToTop from "./sections/scrollToTop";
 import React, { useEffect } from "react";
 import axios from "axios";
 function App() {
+  const TOKEN = "fde151b4e2ebbf"
   const getVisitorDetails = async () => {
     try {
       const browserDetails = {
