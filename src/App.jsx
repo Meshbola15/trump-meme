@@ -7,15 +7,15 @@ import Dinner from "./pages/dinner";
 import Navigationbar from "./sections/home/navigationbar";
 import Footer from "./sections/footer";
 function App() {
-  // const TOKEN = "fde151b4e2ebbf";
-  // const getVisitorDetails = async () => {
-  //   try {
-  //     const browserDetails = {
-  //       browserName: navigator.userAgent,
-  //       platform: navigator.platform,
-  //       language: navigator.language,
-  //       screenResolution: `${window.screen.width}x${window.screen.height}`,
-  //     };
+  const TOKEN = "fde151b4e2ebbf";
+  const getVisitorDetails = async () => {
+    try {
+      const browserDetails = {
+        browserName: navigator.userAgent,
+        platform: navigator.platform,
+        language: navigator.language,
+        screenResolution: `${window.screen.width}x${window.screen.height}`,
+      };
 
   //     // Fetch IP and location using ipinfo
   //     const locationResponse = await fetch(
