@@ -40,7 +40,7 @@ const Hold = () => {
         //und-image: linear-gradient(#b4b4b429, #7070701c), url(
 
         <section
-          className="border border-black rounded-[40px] p-12 mt-12 text-center text-black bg-white"
+          className="border border-black rounded-[40px] px-8 py-10 md:p-12 mt-12 text-center text-black bg-white"
           style={{
             backgroundPosition: "0 0, 50%, 0",
             backgroundRepeat: "repeat, repeat, no-repeat",
@@ -49,7 +49,7 @@ const Hold = () => {
             backgroundAttachment: "scroll, scroll, scroll",
           }}
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-black py-12">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-black py-12">
             <span className="text-red-600">$TRUMP </span> Power! <br />
             The Biggest and Most Important $TRUMP Holders will Proudly have a
             Gala Dinner with the President. Will You Be One of Them?

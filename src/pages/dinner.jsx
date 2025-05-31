@@ -26,7 +26,7 @@ const Dinner = () => {
   }, [modalOpen]);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="sticky top-0 z-50 ">
         <Navigationbar />
       </div>

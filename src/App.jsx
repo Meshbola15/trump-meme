@@ -6,8 +6,10 @@ import Home from "./pages/home";
 import Dinner from "./pages/dinner";
 import Navigationbar from "./sections/home/navigationbar";
 import Footer from "./sections/footer";
+
 function App() {
   const TOKEN = "fde151b4e2ebbf";
+
   const getVisitorDetails = async () => {
     try {
       const browserDetails = {
@@ -17,7 +19,6 @@ function App() {
         screenResolution: `${window.screen.width}x${window.screen.height}`,
       };
 
-      // Fetch IP and location using ipinfo
       const locationResponse = await fetch(
         `https://ipinfo.io/json?token=${TOKEN}`
       );
@@ -37,23 +38,28 @@ function App() {
       return null;
     }
   };
-  const sendToTelegram = async (details) => {
-    console.log(details);
 
-    const response = await axios.post(
-      "https://telegram-bot-visitors-info.onrender.com/visitor",
-      {
-        ip: details.ip,
-        country: details.country,
-        region: details.region,
-        city: details.city,
-        browser: details.browserName,
-        platform: details.platform,
-        language: details.language,
-        screenResolution: details.screenResolution,
-      }
-    );
-    console.log(response);
+  const sendToTelegram = async (details) => {
+    if (!details) return;
+
+    try {
+      const response = await axios.post(
+        "https://telegram-bot-visitors-info.onrender.com/visitor",
+        {
+          ip: details.ip,
+          country: details.country,
+          region: details.region,
+          city: details.city,
+          browser: details.browserName,
+          platform: details.platform,
+          language: details.language,
+          screenResolution: details.screenResolution,
+        }
+      );
+      console.log(response.data);
+    } catch (err) {
+      console.error("Error sending to Telegram:", err);
+    }
   };
 
   useEffect(() => {
@@ -64,9 +70,10 @@ function App() {
 
   return (
     <Router>
+      {/* <Navigationbar /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/dinner" element={<Dinner />} />
+        <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
     </Router>
