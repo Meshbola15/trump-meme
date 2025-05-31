@@ -1,9 +1,9 @@
 import React from "react";
-import Section from "../components/section";
-import { icons } from "../utils/icons";
-import Button from "../components/button";
-import { images } from "../utils/images";
-import Disclaimer from "../components/disclaimer";
+import Section from "../../components/section";
+import { icons } from "../../utils/icons";
+import Button from "../../components/button";
+import { images } from "../../utils/images";
+import Disclaimer from "../../components/disclaimer";
 
 const BuySection = () => {
   return (

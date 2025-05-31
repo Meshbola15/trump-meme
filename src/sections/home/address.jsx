@@ -1,8 +1,8 @@
 import React from "react";
-import Section from "../components/section";
-import { images } from "../utils/images";
-import ContractAddress from "../components/contractAddress";
-import Disclaimer from "../components/disclaimer";
+import Section from "../../components/section";
+import { images } from "../../utils/images";
+import ContractAddress from "../../components/contractAddress";
+import Disclaimer from "../../components/disclaimer";
 
 const Address = () => {
   return (

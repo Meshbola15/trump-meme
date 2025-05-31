@@ -15,6 +15,13 @@ import moonshot800 from "../assets/moonshot_light-p-800.png";
 import moonshot1080 from "../assets/moonshot_light-p-1080.png";
 import community from "../assets/Community5.webp";
 import communityTop from "../assets/Community-top.webp";
+import trumpDinner from "../assets/Dinner-With-Trump.webp";
+import starBust from "../assets/StarBurst.svg";
+import Leaderboard from "../assets/Leaderboard.webp";
+import TNGC from "../assets/TNGC.webp";
+import meeting from "../assets/DT-Meeting.webp";
+import TNGCFront from "../assets/TNGC-Front.webp";
+import trumpFavicon from "../assets/trump-favicon.png";
 
 export const images = {
   TFight,
@@ -34,4 +41,11 @@ export const images = {
   moonshot1080,
   community,
   communityTop,
+  trumpDinner,
+  starBust,
+  Leaderboard,
+  TNGC,
+  meeting,
+  TNGCFront,
+  trumpFavicon,
 };

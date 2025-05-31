@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Section from "../components/section";
-import { images } from "../utils/images";
-import Button from "../components/button";
-import ContractAddress from "../components/contractAddress";
-import Disclaimer from "../components/disclaimer";
+import Section from "../../components/section";
+import { images } from "../../utils/images";
+import Button from "../../components/button";
+import ContractAddress from "../../components/contractAddress";
+import Disclaimer from "../../components/disclaimer";
 
 const Hero = () => {
   return (

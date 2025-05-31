@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Section from "../components/section";
-import Button from "../components/button";
-import Logo from "../components/logo";
+import Section from "../../components/section";
+import Button from "../../components/button";
+import Logo from "../../components/logo";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const links = [

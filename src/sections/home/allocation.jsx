@@ -1,7 +1,7 @@
 import React from "react";
-import Section from "../components/section";
-import { images } from "../utils/images";
-import Disclaimer from "../components/disclaimer";
+import Section from "../../components/section";
+import { images } from "../../utils/images";
+import Disclaimer from "../../components/disclaimer";
 
 const Allocation = () => {
   return (
@@ -15,11 +15,13 @@ const Allocation = () => {
       }}
     >
       <Section className="text-black py-32 text-center mx-auto">
-        <h2 className="rainbow-text text-4xl md:text-5xl lg:text-6xl font-bold">Allocation</h2>
+        <h2 className="rainbow-text text-4xl md:text-5xl lg:text-6xl font-bold">
+          Allocation
+        </h2>
         <p className="body mt-6">
           There are 200 million $TRUMP available on day one and will grow to a
-          total of 1 billion $TRUMP over three years. Each group's allocation
-          is released on their own schedule over 3 years.
+          total of 1 billion $TRUMP over three years. Each group's allocation is
+          released on their own schedule over 3 years.
         </p>
         <img
           sizes="(max-width: 991px) 90vw, 700px"

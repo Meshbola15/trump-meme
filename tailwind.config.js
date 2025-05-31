@@ -9,14 +9,26 @@ export default {
         savor: "#cececee0",
         duckling: "#FDEA71",
         grain: "#C89338",
+        gold: "#d3b136",
+      },
+      fontFamily: {
+        "neue-haas-grotesk-display-black": [
+          "Neue Haas Grotesk Display Black",
+          "sans-serif",
+        ],
       },
       animation: {
         ticker: "ticker 7s linear infinite",
+       wiggle: "wiggle 0.2s ease-in-out 4"
       },
       keyframes: {
         ticker: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
+        },
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
         },
       },
     },

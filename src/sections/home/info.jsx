@@ -1,6 +1,6 @@
 import React from "react";
-import Section from "../components/section";
-import { images } from "../utils/images";
+import Section from "../../components/section";
+import { images } from "../../utils/images";
 
 const Info = () => {
   return (

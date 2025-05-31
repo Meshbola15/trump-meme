@@ -3,7 +3,13 @@ import { cn } from "../utils/utils";
 
 const Section = ({ children, style, className }) => {
   return (
-    <section className={cn("w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] mx-auto", className)} style={style}>
+    <section
+      className={cn(
+        "w-full px-[5%] md:px-[8%] lg:px-[12%] mx-auto py-20",
+        className
+      )}
+      style={style}
+    >
       {children}
     </section>
   );
