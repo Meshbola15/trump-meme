@@ -1,33 +1,31 @@
 import React, { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 import Section from "../../components/section";
 import Button from "../../components/button";
 import Logo from "../../components/logo";
-import { HiMenu, HiX } from "react-icons/hi";
 
 const links = [
-  {
-    link: "home",
-    title: "Home",
-  },
-  {
-    link: "contract",
-    title: "Contract Address",
-  },
-  {
-    link: "buy",
-    title: "How to buy",
-  },
+  { link: "home", title: "Home" },
+  { link: "contract", title: "Contract Address" },
+  { link: "buy", title: "How to Buy" },
+  { link: "/dinner", title: "Dinner", type: "link" },
 ];
 
 const Navigationbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const handleScroll = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+  const handleClick = (link) => {
+    if (link.type === "link") {
+      navigate(link.link);
+    } else {
+      const section = document.getElementById(link.link);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
-    setIsMenuOpen(false); // Close menu on click
+    setIsMenuOpen(false);
   };
 
   return (
@@ -38,15 +36,15 @@ const Navigationbar = () => {
         }`}
       >
         {/* Desktop Navigation */}
-        <div className="hidden md:flex justify-between items-center px-8 flex-row">
+        <div className="hidden md:flex justify-between items-center px-8">
           <Logo />
 
           <ul className="flex items-center gap-8 ml-auto">
             {links.map((link) => (
               <li key={link.title}>
                 <button
-                  onClick={() => handleScroll(link.link)}
-                  className="text-white font-normal text-[12px] md:text-[14px] lg:text-[16px] focus:outline-none"
+                  onClick={() => handleClick(link)}
+                  className="text-white font-normal text-sm lg:text-base hover:opacity-80 transition-opacity"
                 >
                   {link.title}
                 </button>
@@ -63,7 +61,7 @@ const Navigationbar = () => {
         <div className="flex items-center justify-between px-8 md:hidden">
           <Logo />
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label="Toggle Menu"
             className="text-white text-2xl"
           >
@@ -71,6 +69,7 @@ const Navigationbar = () => {
           </button>
         </div>
 
+        {/* Mobile Menu Content */}
         <div
           className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
             isMenuOpen ? "max-h-96 px-8 mt-4" : "max-h-0"
@@ -80,8 +79,8 @@ const Navigationbar = () => {
             {links.map((link) => (
               <li key={link.title}>
                 <button
-                  onClick={() => handleScroll(link.link)}
-                  className="text-white font-normal text-[14px] focus:outline-none"
+                  onClick={() => handleClick(link)}
+                  className="text-white font-normal text-base hover:opacity-80 transition-opacity"
                 >
                   {link.title}
                 </button>

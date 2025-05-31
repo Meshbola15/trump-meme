@@ -69,7 +69,6 @@ function App() {
         <Route path="/dinner" element={<Dinner />} />
       </Routes>
       <Footer />
-      {/* You can add a footer or other components here */}
     </Router>
   );
 }
