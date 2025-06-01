@@ -18,12 +18,12 @@ const Dinner = () => {
   // const toggleModal = () => {
   //   setModalOpen(!modalOpen);
   // };
-  React.useEffect(() => {
-    document.body.style.overflow = modalOpen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto"; // Reset on unmount
-    };
-  }, [modalOpen]);
+  // React.useEffect(() => {
+  //   document.body.style.overflow = modalOpen ? "hidden" : "auto";
+  //   return () => {
+  //     document.body.style.overflow = "auto"; // Reset on unmount
+  //   };
+  // }, [modalOpen]);
 
   return (
     <div className="overflow-hidden">
