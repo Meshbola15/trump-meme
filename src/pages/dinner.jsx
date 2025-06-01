@@ -14,10 +14,10 @@ import { MdClose } from "react-icons/md";
 import Navigationbar from "../sections/home/navigationbar";
 
 const Dinner = () => {
-  const [modalOpen, setModalOpen] = React.useState(true);
-  const toggleModal = () => {
-    setModalOpen(!modalOpen);
-  };
+  // const [modalOpen, setModalOpen] = React.useState(true);
+  // const toggleModal = () => {
+  //   setModalOpen(!modalOpen);
+  // };
   React.useEffect(() => {
     document.body.style.overflow = modalOpen ? "hidden" : "auto";
     return () => {
@@ -40,7 +40,7 @@ const Dinner = () => {
       <CommunityCallToAction />
       <Faqsection faq={faq} />
 
-      {modalOpen && (
+      {/* {modalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 ">
           <div className="w-[350px] bg-white relative animate-wiggle">
             <MdClose
@@ -83,7 +83,7 @@ const Dinner = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
