@@ -72,8 +72,8 @@ function App() {
     <Router>
       {/* <Navigationbar /> */}
       <Routes>
-        <Route path="/dinner" element={<Dinner />} />
-        <Route path="*" element={<Home />} />
+        <Route path="/" element={<Dinner />} />
+     {/* <Route path="*" element={<Home />} /> */}
       </Routes>
       <Footer />
     </Router>
