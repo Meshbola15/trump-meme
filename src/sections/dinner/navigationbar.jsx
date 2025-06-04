@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Section from "../../components/section";
 import Button from "../../components/button";
 import Logo from "../../components/logo";
@@ -9,22 +9,19 @@ const links = [
   { link: "home", title: "Home" },
   { link: "contract", title: "Contract Address" },
   { link: "buy", title: "How to Buy" },
-  { link: "/dinner", title: "Dinner", type: "link" },
+  // { link: "/dinner", title: "Dinner", type: "link" },
 ];
 
 const Navigationbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleClick = (link) => {
-    if (link.type === "link") {
-      navigate(link.link);
-    } else {
-      const section = document.getElementById(link.link);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+    const section = document.getElementById(link.link);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+
     setIsMenuOpen(false);
   };
 
